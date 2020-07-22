@@ -3,9 +3,13 @@ const TSLintPlugin = require("tslint-webpack-plugin");
 const rootAbsolute = path.resolve(__dirname, '');
 console.log()
 module.exports = {
-  entry: rootAbsolute + "/src/index.ts",
+  entry: {
+    app: rootAbsolute + "/src/index.ts",
+
+    "drag.test": rootAbsolute + "/src/drag/drag.test.ts"
+  },
   output: {
-    filename: "app.js",
+    filename: "[name].js",
     path: rootAbsolute + "/dist",
   },
   module: {
